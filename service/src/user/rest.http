@@ -1,0 +1,12 @@
+### Get
+Get http://localhost:3000/user
+###
+Post http://localhost:3000/user/user
+Content-Type: application/json
+
+{
+  "no": "dfdfdfd",
+  "name": "zlfera",
+  "phone":1,
+  "sex":211111
+}
