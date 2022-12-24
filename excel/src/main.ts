@@ -6,7 +6,7 @@ import "normalize.css";
 import * as ElementPlusIconsVue from "@element-plus/icons-vue";
 import ElementPlus from "element-plus";
 import zhCn from "element-plus/dist/locale/zh-cn.mjs";
-
+import "./assets/base.css";
 const app = createApp(App);
 app.use(ElementPlus, {
     locale: zhCn,

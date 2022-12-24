@@ -15,5 +15,6 @@
     "editor.wordBasedSuggestions": false,
     "editor.trimAutoWhitespace": false,
     "elixirLS.projectDir": "/serve",
-    "varTranslation.translationEngine": "baidu"
+    "varTranslation.translationEngine": "baidu",
+    "Codegeex.EnableExtension": false
 }
