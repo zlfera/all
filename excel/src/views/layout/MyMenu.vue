@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { useRoute } from "vue-router";
-const isCollapse = ref(false);
+
 const handleOpen = () => {};
 const handleClose = () => {};
 const route = useRoute();
+const isCollapse = inject("layoutIsCollapse");
 </script>
 <template>
   <el-menu
@@ -21,7 +22,7 @@ const route = useRoute();
       <el-icon>
         <location />
       </el-icon>
-      系统首页
+      <template #title> 系统首页 </template>
     </el-menu-item>
     <el-sub-menu index="/order">
       <template #title>

@@ -141,11 +141,11 @@ const router = createRouter({
                 },
             ],
         },
-        // {
-        //     path: "/",
-        //     name: "index",
-        //     component: () => import("@/views/Index.vue"),
-        // },
+        {
+            path: "/index",
+            name: "index",
+            component: () => import("@/views/Index.vue"),
+        },
         // {
         //     path: "/page",
         //     name: "layout",
