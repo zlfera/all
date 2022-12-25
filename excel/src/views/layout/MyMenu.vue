@@ -1,20 +1,22 @@
 <script setup lang="ts">
 import { useRoute } from "vue-router";
+import useWebComponentStore from "@/stores/webComponent";
+const store = useWebComponentStore();
 
 const handleOpen = () => {};
 const handleClose = () => {};
 const route = useRoute();
-const isCollapse = inject("layoutIsCollapse");
+//const isCollapse = inject("layoutIsCollapse");
 </script>
 <template>
   <el-menu
-    router="true"
+    :router="true"
     :default-active="route.path"
     class="el-menu-vertical-demo"
     background-color="#112f50"
     text-color="#fff"
     active-text-color="#ffd04b"
-    :collapse="isCollapse"
+    :collapse="store.isCollapse.data"
     @open="handleOpen"
     @close="handleClose"
   >

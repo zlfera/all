@@ -1,13 +1,23 @@
 <script setup lang="ts">
-const isCollapse = inject("layoutIsCollapse");
-const changeCollapse = inject("layoutChangeCollapse");
+import useWebComponentStore from "@/stores/webComponent";
+const store = useWebComponentStore();
+//const isCollapse = store.isCollapse;
+//const isCollapse = inject<boolean>("layoutIsCollapse");
+//const changeCollapse = inject<Function>("layoutChangeCollapse");
 </script>
 <template>
   <div class="header">
-    <el-icon :size="30">
-      <Fold v-show="!isCollapse" @click="changeCollapse" />
-      <Expand v-show="isCollapse" @click="changeCollapse" />
-    </el-icon>
+    <div class="icon">
+      <el-icon :size="30">
+        <!-- <Fold v-show="!isCollapse" @click="changeCollapse" />
+        <Expand v-show="isCollapse" @click="changeCollapse" /> -->
+        <Fold v-show="!store.isCollapse.data" @click="store.changeCollapse" />
+        <Expand v-show="store.isCollapse.data" @click="store.changeCollapse" />
+      </el-icon>
+    </div>
+    <div class="right">
+      <div class="time">2022/12/25</div>
+    </div>
   </div>
   <div class="wrapper">
     <RouterView />
@@ -17,6 +27,16 @@ const changeCollapse = inject("layoutChangeCollapse");
 .header {
   height: 50px;
   background-color: pink;
+  display: flex;
+
+  .icon {
+    cursor: pointer;
+    flex: 1;
+  }
+
+  .right {
+    margin-right: 10px;
+  }
 }
 
 .wrapper {

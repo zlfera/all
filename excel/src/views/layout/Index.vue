@@ -1,15 +1,18 @@
 <script setup lang="ts">
 import MyMenu from "./MyMenu.vue";
 import Content from "./Content.vue";
-const isCollapse = ref(false);
-provide("layoutIsCollapse", isCollapse);
-const changeCollapse = () => (isCollapse.value = !isCollapse.value);
-provide("layoutChangeCollapse", changeCollapse);
+import useWebComponentStore from "@/stores/webComponent";
+const store = useWebComponentStore();
+
+//const isCollapse = ref(false);
+//provide("layoutIsCollapse", isCollapse);
+//const changeCollapse = () => (isCollapse.value = !isCollapse.value);
+//provide("layoutChangeCollapse", changeCollapse);
 const width = computed(() => {
-  if (isCollapse.value == false) {
+  if (store.isCollapse.data == false) {
     return "200px";
   }
-  if (isCollapse.value == true) {
+  if (store.isCollapse.data == true) {
     return "65px";
   }
 });
@@ -19,7 +22,11 @@ const width = computed(() => {
     <MyMenu />
   </div>
   <!-- <div class="content" :style="{ '--width': width }"> -->
-  <div class="content" :class="{ active: isCollapse }" :style="{ '--width': width }">
+  <div
+    class="content"
+    :class="{ active: store.isCollapse.data }"
+    :style="{ '--width': width }"
+  >
     <Content />
   </div>
 </template>
