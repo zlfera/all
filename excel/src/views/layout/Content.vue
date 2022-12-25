@@ -11,8 +11,8 @@ const store = useWebComponentStore();
       <el-icon :size="30">
         <!-- <Fold v-show="!isCollapse" @click="changeCollapse" />
         <Expand v-show="isCollapse" @click="changeCollapse" /> -->
-        <Fold v-show="!store.isCollapse.data" @click="store.changeCollapse" />
-        <Expand v-show="store.isCollapse.data" @click="store.changeCollapse" />
+        <Fold v-show="!store.isCollapse" @click="store.changeCollapse" />
+        <Expand v-show="store.isCollapse" @click="store.changeCollapse" />
       </el-icon>
     </div>
     <div class="right">

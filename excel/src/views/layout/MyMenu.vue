@@ -16,7 +16,7 @@ const route = useRoute();
     background-color="#112f50"
     text-color="#fff"
     active-text-color="#ffd04b"
-    :collapse="store.isCollapse.data"
+    :collapse="store.isCollapse"
     @open="handleOpen"
     @close="handleClose"
   >

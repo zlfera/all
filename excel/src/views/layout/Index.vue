@@ -9,10 +9,10 @@ const store = useWebComponentStore();
 //const changeCollapse = () => (isCollapse.value = !isCollapse.value);
 //provide("layoutChangeCollapse", changeCollapse);
 const width = computed(() => {
-  if (store.isCollapse.data == false) {
+  if (store.isCollapse == false) {
     return "200px";
   }
-  if (store.isCollapse.data == true) {
+  if (store.isCollapse == true) {
     return "65px";
   }
 });
@@ -24,7 +24,7 @@ const width = computed(() => {
   <!-- <div class="content" :style="{ '--width': width }"> -->
   <div
     class="content"
-    :class="{ active: store.isCollapse.data }"
+    :class="{ active: store.isCollapse }"
     :style="{ '--width': width }"
   >
     <Content />
